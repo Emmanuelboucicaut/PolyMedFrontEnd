@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppServices } from '../appservices.service';
-// import * as bcrypt from 'bcryptjs';
+import * as bcrypt from 'bcryptjs';
 
 @Component({
   selector: 'app-login',
@@ -50,8 +50,8 @@ export class LoginComponent implements OnInit {
     return this.appServices.getLabel(keyResource);
   }
 
-  getCryptedPassword(password : string ) : string {
-    // const salt = bcrypt.genSaltSync(10);
-    return "bcrypt.hashSync(password, salt)";
-  }
+  // getCryptedPassword(password : string ) : string {
+  //   const salt = bcrypt.genSaltSync(10);
+  //   return bcrypt.hashSync(password, salt);
+  // }
 }

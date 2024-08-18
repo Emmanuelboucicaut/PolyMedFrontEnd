@@ -7,7 +7,7 @@ import * as CryptoJS from 'crypto-js';
 import { Utilisateur } from 'src/app/models/utilisateur';
 import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
-// import { argon2id } from 'argon2-browser';
+import * as bcrypt from 'bcryptjs';
 
 
 @Component({
@@ -127,17 +127,9 @@ export class AjouterUtilisateurComponent implements OnInit {
     return this.appServices.getLabel(key);
   }
 
-  async getCryptedPassword(password : string ) : Promise<string> {
-  //   return await argon2id({
-  //   pass: password, // Le mot de passe à hasher
-  //   salt: crypto.getRandomValues(new Uint8Array(16)), // Génération d'un salt aléatoire
-  //   time: 2, // Paramètre de coût
-  //   mem: 65536, // Mémoire utilisée
-  //   hashLen: 32, // Longueur du hash
-  //   parallelism: 1,
-  // });
-    return "";
-
+  getCryptedPassword(password : string ) : string {
+      const salt = bcrypt.genSaltSync(10);
+      return bcrypt.hashSync(password, salt);
   }
 
   compareEntryUserPassword(password: string, rePassword: string) : boolean {
