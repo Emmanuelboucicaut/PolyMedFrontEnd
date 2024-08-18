@@ -1,1 +1,217 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+:root {
+  /* Couleurs principales */
+  --color-primary: #4CAF50; /* Vert */
+  --color-primary-dark: #388E3C;
+  --color-primary-light: #C8E6C9;
+  --color-primary-text: #FFFFFF; /* Texte sur fond primaire */
+
+  /* Couleurs secondaires */
+  --color-secondary: #FFC107; /* Jaune */
+  --color-secondary-dark: #FFA000;
+  --color-secondary-light: #FFECB3;
+  --color-secondary-text: #000000; /* Texte sur fond secondaire */
+
+  /* Couleurs de fond */
+  --color-background: #F4F4F4; /* Fond général */
+  --color-surface: #FFFFFF; /* Surface (par exemple, cartes, formulaires) */
+
+  /* Couleurs de texte */
+  --color-text-primary: #4CAF50; /* Texte principal */
+  --color-text-secondary: #757575; /* Texte secondaire */
+
+  /* Couleurs d'accent */
+  --color-accent: #FF5722; /* Accent (par exemple, boutons, liens) */
+  --color-accent-dark: #E64A19;
+
+  /* Autres variables */
+  --spacing-unit: 8px; /* Unité d'espacement */
+  --border-radius: 4px; /* Rayon des bordures */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* header.header {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  padding: calc(var(--spacing-unit) * 2);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+} */
+
+/* .sidebar {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-right: 1px solid var(--color-primary-dark);
+  padding: calc(var(--spacing-unit) * 2);
+  position: fixed;
+  top: 4rem;
+  bottom: 0;
+  width: 200px;
+  overflow-y: auto;
+} */
+
+/* .main-content {
+  margin-top: 4rem;
+  margin-left: 200px;
+  padding: calc(var(--spacing-unit) * 2);
+  flex-grow: 1;
+} */
+
+/* Styles de base pour les formulaires */
+form {
+  background: var(--color-surface);
+  padding: calc(var(--spacing-unit) * 6);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--spacing-unit);
+}
+
+label {
+  display: block;
+  margin-bottom: calc(var(--spacing-unit) / 2);
+  color: var(--color-text-secondary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: calc(var(--spacing-unit) * 1);
+  margin-bottom: var(--spacing-unit);
+  border: 1px solid var(--color-text-secondary);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: auto;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+button {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border: none;
+  padding: calc(var(--spacing-unit) * 1);
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  margin-top: var(--spacing-unit);
+}
+
+button:hover {
+  background-color: var(--color-accent-dark);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: calc(var(--spacing-unit) / 2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--spacing-unit);
+}
+
+table th,
+table td {
+  border: 1px solid var(--color-text-secondary);
+  padding: calc(var(--spacing-unit) * 1.5);
+  text-align: left;
+}
+
+table th {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-primary);
+
+}
+
+table td {
+  color: var(--color-text-secondary);
+  font-size: small;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-background);
+}
+
+th, td {
+  border: none;
+}
+
+a {
+  color: var(--color-secondary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-secondary-dark);
+}
+
+.input-error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Styles personnalisés pour les notifications */
+/* Styles personnalisés pour les notifications */
+.toast-top-right {
+  position: fixed; /* Change 'position' from static to fixed */
+  top: 12px;
+  right: 12px;
+  z-index: 1050; /* Ensure the notification appears above other content */
+}
+
+.toast-success {
+  background-color: #28a745 !important;
+  color: #28a745 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 450px;;
+}
+
+.toast-error {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toast-info {
+  background-color: #17a2b8 !important;
+  color: white !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toast-warning {
+  background-color: #ffc107 !important;
+  color: #212529 !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Barre de progression */
+.toast-progress {
+  background-color: rgba(255, 255, 255, 0.7);
+}

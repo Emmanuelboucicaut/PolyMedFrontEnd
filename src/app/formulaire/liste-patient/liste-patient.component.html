@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-header">
+        {{ getLabel('TITLE_LISTE_PATIENT') }}
+    </div>
+    <div class="card-content">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Rechercher..." class="search-bar">
+
+        <table id="dataTable" class="styled-table">
+            <thead>
+                <tr>
+                    <th>{{ getLabel('TITLE_TABLE_DOSSIER') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_NOM') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_PRENOM') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_NAISSANCE') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_SEXE') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_TELEPHONE') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_CONTACT') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_TELEPHONE_CONTACT') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_ETATCIVIL') }}</th>
+                    <th>{{ getLabel('TITLE_TABLE_DATEENTREE') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let record of records">
+                    <td>{{record.numeroDossier}}</td>
+                    <td>{{record.nom}}</td>
+                    <td>{{record.prenom}}</td>
+                    <td>{{record.dateNaissance}}</td>
+                    <td>{{record.sexe}}</td>
+                    <td>{{record.telephone}}</td>
+                    <td>{{record.personneResponsable}}</td>
+                    <td>{{record.telephoneResponsable}}</td>
+                    <td>{{record.etatCivil}}</td>
+                    <td>{{record.created_at | date: 'yyyy-MM-dd'}}</td>
+                    <!-- <td><button (click)="edit(record.id)">Supprimer</button></td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        {{Count}}
+    </div>
+</div>
+

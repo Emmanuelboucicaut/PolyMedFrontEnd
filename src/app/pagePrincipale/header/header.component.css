@@ -1,0 +1,105 @@
+header {
+    background-color: #008000; /* Vert */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.social-media a {
+    margin: 0 10px;
+}
+
+.social-media img {
+    height: 30px;
+}
+
+.login-icon img {
+    height: 30px;
+}
+
+/* test */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(2, 20, 7, 0.1);
+}
+
+.header-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100px repeat(5,1fr);
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+/* .logo img {
+    height: 40px;
+} */
+/*
+nav .nav-links {
+    list-style: none;
+    display: flex;
+} */
+
+/* nav .nav-links li {
+    margin-left: 20px;
+} */
+
+/* nav .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #007bff;
+} */
+
+/* .header-buttons {
+    display: flex;
+    align-items: center;
+} */
+
+.header-buttons .login-btn,
+.header-buttons .sign-up-btn {
+    background-color: transparent;
+    border: 1px solid green;
+    padding: 8px 16px;
+    color: green;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-buttons .sign-up-btn {
+    background-color: green;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.header-buttons .login-btn:hover {
+    background-color: green;
+    color: #fff;
+}
+
+.header-buttons .sign-up-btn:hover {
+    background-color: green;
+}

@@ -1,0 +1,121 @@
+  <div class="card">
+    <div class="card-header">
+        {{ getLabel('TITLE_FORM_NOUVEAU_PATIENT') }}
+    </div>
+    <div class="card-content">
+        <div class="form-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="PatientForm">
+    <div class="container-form">
+      <div class="form-group">
+        <label for="nom">{{ getLabel('LABEL_NOM') }}</label>
+        <input type="text" id="nom" name="nom" formControlName="nom">
+        <div *ngIf="PatientForm.get('nom')?.invalid && (PatientForm.get('nom')?.dirty || PatientForm.get('nom')?.touched)">
+          <div class="input-error" *ngIf="PatientForm.get('nom')?.errors?.['required']">{{ getLabel('MESSAGE_NOM_REQUIS') }}</div>
+          <div class="input-error" *ngIf="PatientForm.get('nom')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_NOM') }}</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="prenom">{{ getLabel('LABEL_PRENOM') }}</label>
+        <input type="text" id="prenom" name="prenom" formControlName="prenom">
+        <div *ngIf="PatientForm.get('prenom')?.invalid && (PatientForm.get('prenom')?.dirty || PatientForm.get('prenom')?.touched)">
+          <div class="input-error" *ngIf="PatientForm.get('prenom')?.errors?.['required']">{{ getLabel('MESSAGE_PRENOM_REQUIS') }}</div>
+          <div class="input-error" *ngIf="PatientForm.get('prenom')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_PRENOM') }}</div>
+        </div>
+      </div>
+      <div class="form-group addresse">
+        <label for="addresse">{{ getLabel('LABEL_ADRESSE') }}</label>
+        <input type="text" id="addresse" name="addresse" formControlName="addresse">
+        <div *ngIf="PatientForm.get('addresse')?.invalid && (PatientForm.get('addresse')?.dirty || PatientForm.get('addresse')?.touched)">
+          <div class="input-error" *ngIf="PatientForm.get('addresse')?.errors?.['required']">{{ getLabel('MESSAGE_ADRESSE_REQUIS') }}</div>
+          <div class="input-error" *ngIf="PatientForm.get('addresse')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_ADDRESSE') }}</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="sexe">{{ getLabel('LABEL_SEXE') }}</label>
+        <select id="sexe" name="sexe" formControlName="sexe">
+          <option value="disabled" disabled selected>{{ getLabel('TEXT_CHOIX_SEXE') }}</option>
+          <option value="masculin">{{getLabel('TEXT_MASCULIN')}}</option>
+          <option value="feminin">{{getLabel('TEXT_FEMININ')}}</option>
+          <option value="autre">{{getLabel('TEXT_AUTRE')}}</option>
+          <option value="aucunReponse">{{getLabel('TEXT_NO_REPONSE')}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="dateNaissance">{{ getLabel('LABEL_NAISSANCE') }}</label>
+        <input type="date" id="dateNaissance" formControlName="dateNaissance" name="dateNaissance">
+      </div>
+      <div class="form-group">
+        <label for="telephone">{{ getLabel('LABEL_TELEPHONE') }}</label>
+        <input type="text" id="telephone" name="telephone" formControlName="telephone">
+        <div *ngIf="PatientForm.get('telephone')?.touched && PatientForm.get('telephone')?.invalid">
+          <small class="input-error" *ngIf="PatientForm.get('telephone')?.hasError('invalidPhoneNumber')">
+            {{ getLabel('MESSAGE_ERROR_TELEPHONE_INVALID') }}
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="personneResponsable">{{ getLabel('LABEL_PERSONNE_RESPONSABLE') }}</label>
+        <input type="text" id="personneResponsable" name="personneResponsable" formControlName="personneResponsable">
+        <div *ngIf="PatientForm.get('personneResponsable')?.invalid && (PatientForm.get('personneResponsable')?.dirty || PatientForm.get('personneResponsable')?.touched)">
+          <div class="input-error" *ngIf="PatientForm.get('personneResponsable')?.errors?.['required']">{{ getLabel('MESSAGE_NOM_RESPONSABLE_REQUIS') }}</div>
+          <div class="input-error" *ngIf="PatientForm.get('personneResponsable')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_NOM') }}</div>
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="relation">{{ getLabel('LABEL_LIEN_PARENTE') }}</label>
+          <select id="relation" name="relation" formControlName="lienParente">
+              <option value="" disabled selected>{{ getLabel('TEXT_LIEN_CONTACT') }}</option>
+              <option value="pere">{{ getLabel('TEXT_LIEN_PERE') }}</option>
+              <option value="mere">{{ getLabel('TEXT_LIEN_MERE') }}</option>
+              <option value="frere">{{ getLabel('TEXT_LIEN_FRERE') }}</option>
+              <option value="soeur">{{ getLabel('TEXT_LIEN_SOEUR') }}</option>
+              <option value="autre">{{ getLabel('TEXT_LIEN_AUTRE') }}</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="telephoneResponsable">{{ getLabel('LABEL_TELEPHONE_RESPONSABLE') }}</label>
+        <input type="text" id="telephoneResponsable" name="telephoneResponsable" formControlName="telephoneResponsable">
+        <div *ngIf="PatientForm.get('telephoneResponsable')?.touched && PatientForm.get('telephoneResponsable')?.invalid">
+          <small class="input-error" *ngIf="PatientForm.get('telephoneResponsable')?.hasError('invalidPhoneNumber')">
+            {{ getLabel('MESSAGE_ERROR_TELEPHONE_INVALID') }}
+          </small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="etatCivil">{{getLabel('LABEL_ETAT_CIVIL')}}</label>
+        <select id="etatCivil" name="etatCivil" formControlName="etatCivil">
+          <option value="" disabled selected>{{getLabel('TEXT_LIEN_ETAT_CIVIL')}}</option>
+          <option value="celibataire">{{getLabel('TEXT_CELIBATAIRE')}}</option>
+          <option value="marie">{{getLabel('TEXT_MARIE')}}</option>
+          <option value="divorce">{{getLabel('TEXT_DIVORCE')}}</option>
+          <option value="veuf">{{getLabel('TEXT_VEUF')}}</option>
+        </select>
+      </div>
+      <div class="form-group symptomes">
+        <label for="symptomes">{{ getLabel('LABEL_SYMPTOMES') }}</label>
+        <textarea id="symptomes" name="symptomes" formControlName="symptomes" rows="6" cols="200"></textarea>
+        <div *ngIf="PatientForm.get('symptomes')?.invalid && (PatientForm.get('symptomes')?.dirty || PatientForm.get('symptomes')?.touched)">
+          <div class="input-error" *ngIf="PatientForm.get('symptomes')?.errors?.['required']">{{ getLabel('MESSAGE_SYMPTOMES_REQUIS') }}</div>
+          <div class="input-error" *ngIf="PatientForm.get('symptomes')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARACTERE_SYMPTOMES') }}</div>
+        </div>
+      </div>
+      <div class="form-group diagnostics">
+        <label for="diagnostics">{{ getLabel('LABEL_DIAGNOSTICS') }}</label>
+        <textarea id="diagnostics" name="diagnostics" formControlName="diagnostics" rows="6" cols="200"></textarea>
+        <div *ngIf="PatientForm.get('diagnostics')?.invalid && (PatientForm.get('diagnostics')?.dirty || PatientForm.get('diagnostics')?.touched)">
+          <div class="input-error" *ngIf="PatientForm.get('diagnostics')?.errors?.['required']">{{ getLabel('MESSAGE_DIAGNOSTICS_REQUIS') }}</div>
+          <div class="input-error" *ngIf="PatientForm.get('diagnostics')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARACTERE_DIAGNOSTICS') }}</div>
+        </div>
+      </div>
+      <div class="form-group button-submit">
+        <button type="submit" [disabled]="!PatientForm.valid">{{ getLabel('LABEL_BUTTON_AJOUTER_PATIENT') }}</button>
+      </div>
+    </div>
+    <!-- <button type="submit" [disabled]="!signUpForm.valid">Submit</button> -->
+  </form>
+</div>
+    </div>
+    <div class="card-footer">
+
+    </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="card">
+  <div class="card-header">
+    <h2>Ajouter un Utilisateur</h2>
+  </div>
+  <div class="card-content">
+    <form [formGroup]="utilisateurForm" (ngSubmit)="onSubmit()">
+      <div class="line-first">
+        <div>
+          <label for="nom">{{ getLabel('LABEL_NOM') }}</label>
+          <input id="nom" formControlName="nom" type="text" />
+          <div *ngIf="utilisateurForm.get('nom')?.invalid && (utilisateurForm.get('nom')?.dirty || utilisateurForm.get('nom')?.touched)">
+            <div class="input-error" *ngIf="utilisateurForm.get('nom')?.errors?.['required']">{{ getLabel('MESSAGE_NOM_REQUIS') }}</div>
+            <div class="input-error" *ngIf="utilisateurForm.get('nom')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_NOM') }}</div>
+          </div>
+        </div>
+        <div>
+          <label for="prenom">{{ getLabel('LABEL_PRENOM') }}</label>
+          <input id="prenom" formControlName="prenom" type="text" />
+          <div *ngIf="utilisateurForm.get('prenom')?.invalid && (utilisateurForm.get('prenom')?.dirty || utilisateurForm.get('prenom')?.touched)">
+            <div class="input-error" *ngIf="utilisateurForm.get('prenom')?.errors?.['required']">{{ getLabel('MESSAGE_PRENOM_REQUIS') }}</div>
+            <div class="input-error" *ngIf="utilisateurForm.get('prenom')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_PRENOM') }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="line-second">
+        <div>
+          <label for="email">{{ getLabel('LABEL_EMAIL_LOGIN_PAGE') }}</label>
+          <input id="email" formControlName="email" type="text" />
+          <div *ngIf="utilisateurForm.get('email')?.invalid && (utilisateurForm.get('email')?.dirty || utilisateurForm.get('email')?.touched)">
+            <div class="input-error" *ngIf="utilisateurForm.get('email')?.errors?.['required']">{{ getLabel('MESSAGE_EMAIL_LOGIN_REQUIS') }}</div>
+            <!-- <div class="input-error" *ngIf="utilisateurForm.get('email')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_NOM') }}</div> -->
+          </div>
+        </div>
+        <!-- <div>
+          <label for="motDePasse">{{ getLabel('LABEL_PASSWORD_LOGIN_PAGE') }}</label>
+          <input id="motDePasse" formControlName="motDePasse" type="password" />
+          <div *ngIf="utilisateurForm.get('motDePasse')?.invalid && (utilisateurForm.get('motDePasse')?.dirty || utilisateurForm.get('motDePasse')?.touched)">
+            <div class="input-error" *ngIf="utilisateurForm.get('motDePasse')?.errors?.['required']">{{ getLabel('MESSAGE_NOM_REQUIS') }}</div>
+            <div class="input-error" *ngIf="utilisateurForm.get('motDePasse')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_NOM') }}</div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="line-third">
+        <div>
+          <label for="motDePasse">{{ getLabel('LABEL_PASSWORD_LOGIN_PAGE') }}</label>
+          <input id="motDePasse" formControlName="motDePasse" type="password" />
+          <div *ngIf="utilisateurForm.get('motDePasse')?.invalid && (utilisateurForm.get('motDePasse')?.dirty || utilisateurForm.get('motDePasse')?.touched)">
+            <div class="input-error" *ngIf="utilisateurForm.get('motDePasse')?.errors?.['required']">{{ getLabel('MESSAGE_MOT_DE_PASSE_REQUIS') }}</div>
+            <div class="input-error" *ngIf="utilisateurForm.get('motDePasse')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_MOT_DE_PASSE') }}</div>
+          </div>
+        </div>
+        <div>
+          <label for="reMotDePasse">{{ getLabel('LABEL_REPASSWORD_LOGIN_PAGE') }}</label>
+          <input id="reMotDePasse" formControlName="reMotDePasse" type="password" />
+          <div *ngIf="utilisateurForm.get('reMotDePasse')?.invalid && (utilisateurForm.get('reMotDePasse')?.dirty || utilisateurForm.get('reMotDePasse')?.touched)">
+            <div class="input-error" *ngIf="utilisateurForm.get('reMotDePasse')?.errors?.['required']">{{ getLabel('MESSAGE_REMOT_DE_PASSE_REQUIS') }}</div>
+            <div class="input-error" *ngIf="utilisateurForm.get('reMotDePasse')?.errors?.['minlength']">{{ getLabel('MESSAGE_MINIMUM_CARATERE_REMOT_DE_PASSE') }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="line-fourth">
+        <div>
+          <label for="languePreferee">{{ getLabel('LABEL_LANGUE_PREFEREE') }}</label>
+          <select id="languePreferee" formControlName="languePreferee">
+            <option *ngFor="let langue of langues" [value]="langue.value">
+              {{ langue.label }}
+            </option>
+          </select>
+
+        </div>
+        <div>
+          <label for="role">{{ getLabel('LABEL_ROLE') }}</label>
+          <select id="role" formControlName="role">
+            <option *ngFor="let role of roles" [value]="role.value">
+              {{ role.label }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="line-button">
+        <div>
+          <button type="submit">{{ getLabel('TEXT_AJOUTER_NOUVEL_UTILISATEUR') }}</button>
+        </div>
+        <div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+/* Styles de la carte */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 20px 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Styles de l'en-tête de la carte */
+.card-header {
+    background-color: #f7f7f7;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    color: green;
+}
+
+/* Styles du contenu de la carte */
+.card-content {
+    padding: 16px;
+}
+
+/* Barre de recherche */
+.search-bar {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Styles de la table */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.styled-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Styles du pied de page de la carte */
+.card-footer {
+    background-color: #f7f7f7;
+    padding: 12px;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+    text-align: right;
+}

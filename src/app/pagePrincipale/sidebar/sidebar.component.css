@@ -1,0 +1,16 @@
+.sidebar {
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 999;
+    font-size: small;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px;
+    cursor: pointer;
+}
