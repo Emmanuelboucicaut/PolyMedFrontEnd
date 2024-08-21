@@ -14,6 +14,8 @@ export class TranslationService {
 
   loadTranslations(lang: string): Observable<void> {
     const baseHref = this.document.getElementsByTagName('base')[0]?.getAttribute('href') || './';
+    console.log('baseHef',baseHref);
+    
     const path = `${baseHref}assets/i18n/${lang}.json`;
 
     return this.http.get(path).pipe(
