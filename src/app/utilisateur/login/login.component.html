@@ -24,5 +24,6 @@
                 </div>
                 <button type="submit" [disabled]="!LoginForm.valid">{{ getLabel('TEXT_LOGIN_PAGE_BUTTON_LOGIN') }}</button>
             </form>
+            <div class="error-message">{{LabelErrorMessage}}</div>
         </div>
     </div>

@@ -14,15 +14,18 @@
 <header>
         <div class="header-container">
             <div class="logo">
-                <img src="path/to/your/logo.png" alt="Logo">
+                <img src="../../../assets/img/logo.png" alt="Logo">
             </div>
             <div></div>
             <div></div>
             <div></div>
-            <div></div>
-            <div class="header-buttons">
-                <button class="login-btn">Authentifier</button>
-                <button class="sign-up-btn">Enregister</button>
+            <div class="user-login">
+              <div class="user-icon">
+                <span class="material-icons">person</span>
+              </div>
+              <div class="user-active-fullname">
+                {{userInfo.nom}}, {{userInfo.prenom}}
+              </div>
             </div>
         </div>
     </header>

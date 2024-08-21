@@ -7,7 +7,7 @@ import * as CryptoJS from 'crypto-js';
 import { Utilisateur } from 'src/app/models/utilisateur';
 import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
-import * as bcrypt from 'bcryptjs';
+//import * as bcrypt from 'bcryptjs';
 
 
 @Component({
@@ -70,13 +70,13 @@ export class AjouterUtilisateurComponent implements OnInit {
           return;
         }
 
-        const cryptedPassword = await this.getCryptedPassword(motDePasse);
+        //const cryptedPassword = await this.getCryptedPassword(motDePasse);
 
         this.utilisateur = {
           nom : nom,
           prenom : prenom,
           email : email,
-          motDePasse : cryptedPassword,
+          motDePasse : motDePasse,
           role : role,
           languePreferee : languePreferee
         };
@@ -121,15 +121,8 @@ export class AjouterUtilisateurComponent implements OnInit {
     }
   }
 
-
-
   getLabel(key: string): string {
     return this.appServices.getLabel(key);
-  }
-
-  getCryptedPassword(password : string ) : string {
-      const salt = bcrypt.genSaltSync(10);
-      return bcrypt.hashSync(password, salt);
   }
 
   compareEntryUserPassword(password: string, rePassword: string) : boolean {

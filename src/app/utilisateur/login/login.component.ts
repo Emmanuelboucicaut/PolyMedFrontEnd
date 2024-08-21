@@ -12,6 +12,7 @@ import * as bcrypt from 'bcryptjs';
 })
 export class LoginComponent implements OnInit {
   LoginForm: FormGroup = new FormGroup({});
+  LabelErrorMessage : string = "";
 
   constructor(
     private router: Router,
@@ -23,23 +24,34 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.LoginForm = this.fb.group({
-      email: ['emmanuel@gmail.com', [Validators.required, Validators.email]],
-      password: ['masterkey', [Validators.required, Validators.minLength(6)]]
+      email: ['emmanuelboucicaut@gmail.com', [Validators.required, Validators.email]],
+      password: ['hA7ht@NwG8EZQfn', [Validators.required, Validators.minLength(6)]]
     })
   }
 
-  onSubmit(): void {
+  async onSubmit() {
     try{
 
       if (this.LoginForm.valid) {
         const { email, password } = this.LoginForm.value;
-        this.authService.LoginUser(email, password);
-         this.router.navigate(['/formulaire']);
+        const response = await this.authService.LoginUser(email, password);
+
+        if (response.statusCode === 400) {
+          this.LabelErrorMessage = response.message
+        }
+        else {
+          this.LabelErrorMessage = "";
+          
+          await this.router.navigate(['/']).then(() => {
+            window.location.reload();
+            this.LoginForm.reset();
+          });
+        }
+
       } else {
         console.log('Invalid form');
       }
 
-      this.LoginForm.reset();
     }
     catch (error) {
       console.error('Login failed', error);

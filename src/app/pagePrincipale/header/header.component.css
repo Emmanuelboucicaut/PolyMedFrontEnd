@@ -49,9 +49,23 @@ header {
     width: 100%;
 }
 
-/* .logo img {
-    height: 40px;
-} */
+.user-login {
+  color: green;
+  display: flex;
+  align-items: center;
+  margin-right: 8px; /* Un petit espace entre l'icône et le texte */
+}
+
+.user-active-fullname {
+  margin-left: 10px;
+  font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
+}
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover; /* Assure que l'image s'adapte bien dans un cadre circulaire */
+}
 /*
 nav .nav-links {
     list-style: none;

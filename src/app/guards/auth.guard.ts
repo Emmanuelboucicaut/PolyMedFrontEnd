@@ -8,13 +8,11 @@ export const authGuard = async () => {
 
   const isLoggedIn = await authService.isLoggedIn();
 
-  console.log('authGuard',isLoggedIn);
-
   if (!isLoggedIn) {
-    // Redirect to the login page
     router.navigate(['/login']);
     return false;
   }
+
 
   return true;
 };

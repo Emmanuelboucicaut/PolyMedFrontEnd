@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject  } from '@angular/core';
 import { AuthService } from './services/auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,18 +12,17 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
 
   constructor(
-    @Inject(AuthService) private authService: AuthService
-  ) {}
-
-  // const authService = inject(AuthService);
-
-
-  async ngOnInit(): Promise<void> {
-    await this.checkLoginStatus();
-
+    @Inject(AuthService) private authService: AuthService,
+    private router: Router,
+  ) {
+     this.checkLoginStatus();
   }
 
-   async checkLoginStatus(): Promise<void> {
-    this.isLoggedIn = await this.authService.isLoggedIn();
+  ngOnInit(): void{
+    this.checkLoginStatus();
+  }
+
+  checkLoginStatus(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
   }
 }
