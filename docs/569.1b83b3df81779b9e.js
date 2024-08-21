@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkPolyMedFrontEnd=self.webpackChunkPolyMedFrontEnd||[]).push([[569],{569:e=>{e.exports=function(){throw new Error("ws does not work in the browser. Browser clients must use the native WebSocket object")}}}]);
