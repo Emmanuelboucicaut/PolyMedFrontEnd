@@ -12,18 +12,25 @@ export class TranslationService {
 
   constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document) {}
 
-  loadTranslations(lang: string): Observable<void> {
-    const baseHref = this.document.getElementsByTagName('base')[0]?.getAttribute('href') || './';
-    console.log('baseHef',baseHref);
-    
-    const path = `${baseHref}assets/i18n/${lang}.json`;
+  // loadTranslations(lang: string): Observable<void> {
+  //   const baseHref = this.document.getElementsByTagName('base')[0]?.getAttribute('href') || './';
+  //   console.log('baseHef',baseHref);
 
-    return this.http.get(path).pipe(
-      map((translations: any) => {
-        this.translations = translations;
-      })
-    );
-  }
+  //   const path = `${baseHref}PolyMedFrontEnd/assets/i18n/${lang}.json`;
+
+  //   return this.http.get(path).pipe(
+  //     map((translations: any) => {
+  //       this.translations = translations;
+  //     })
+  //   );
+  // }
+  loadTranslations(lang: string): Observable<void> {
+  return this.http.get(`./assets/i18n/${lang}.json`).pipe(
+    map((translations: any) => {
+      this.translations = translations;
+    })
+  );
+}
 
   translate(key: string): string {
     return this.translations[key] || key;
