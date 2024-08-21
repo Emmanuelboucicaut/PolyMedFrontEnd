@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormulaireModule } from './formulaire/formulaire.module';
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
-import { PagePrincipaleComponent } from './pagePrincipale/page-principale/page-principale.component';
+// import { PagePrincipaleComponent } from './pagePrincipale/page-principale/page-principale.component';
 import { JwtModule } from '@auth0/angular-jwt';
-import { SidebarComponent } from './pagePrincipale/sidebar/sidebar.component';
-import { HeaderComponent } from './pagePrincipale/header/header.component';
+// import { SidebarComponent } from './pagePrincipale/sidebar/sidebar.component';
+// import { HeaderComponent } from './pagePrincipale/header/header.component';
 import { UtilisateurModule } from './utilisateur/utilisateur.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +16,7 @@ import { LoginComponent } from './utilisateur/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { JwtService } from './services/auth/jwt.service';
-
+import { PagePrincipaleModule } from './pagePrincipale/page-principale.module';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -25,16 +25,16 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    PagePrincipaleComponent,
-    SidebarComponent,
-    HeaderComponent,
+    //PagePrincipaleComponent,
+    //SidebarComponent,
+    // HeaderComponent,
     LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormulaireModule,
     HttpClientModule,
+    PagePrincipaleModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,

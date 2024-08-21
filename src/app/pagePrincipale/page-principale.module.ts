@@ -5,6 +5,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FormulaireModule } from '../formulaire/formulaire.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
-    FormulaireModule
-
-  ]
+    FormulaireModule,
+    AppRoutingModule,
+  ],
+  exports: [PagePrincipaleComponent]
 })
 export class PagePrincipaleModule { }
