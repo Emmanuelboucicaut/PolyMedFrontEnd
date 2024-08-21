@@ -25,7 +25,7 @@ export class TranslationService {
   //   );
   // }
   loadTranslations(lang: string): Observable<void> {
-  return this.http.get(`./PolyMedFrontEnd/assets/i18n/${lang}.json`).pipe(
+  return this.http.get(`assets/i18n/${lang}.json`).pipe(
     map((translations: any) => {
       this.translations = translations;
     })
