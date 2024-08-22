@@ -9,11 +9,12 @@ export class AppServices implements OnInit  {
   constructor(
     @Inject(TranslationService) private translationService: TranslationService,) {
 
-      this.ngOnInit() ;
+      this.ngOnInit();
   }
 
   ngOnInit() : void {
     this.translationService.loadTranslations('cr').subscribe(() => {
+      console.log(this.getLabel('TITLE_LOGIN_PAGE'))
     });
   }
 
