@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-header">
+    Créer/Modifier un Billet
+  </div>
+  <div class="card-content">
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Titre:</label>
+        <input id="title" formControlName="title" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="type">Type:</label>
+        <select id="type" formControlName="type">
+          <option value="bug">Bug</option>
+          <option value="changement">Changement</option>
+          <option value="ajout">Ajout</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="priority">Priorité:</label>
+        <select id="priority" formControlName="priority">
+          <option value="faible">Faible</option>
+          <option value="moyenne">Moyenne</option>
+          <option value="élevée">Élevée</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Statut:</label>
+        <select id="status" formControlName="status">
+          <option value="nouveau">Nouveau</option>
+          <option value="en cours">En cours</option>
+          <option value="terminé">Terminé</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="assignee">Attribuer à:</label>
+        <select id="assignee" formControlName="assignee">
+          <option *ngFor="let dev of developers" [value]="dev.id">
+            {{ dev.fullName }}
+          </option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+    </form>
+  </div>
+</div>

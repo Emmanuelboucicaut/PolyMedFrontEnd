@@ -21,7 +21,12 @@
             <div></div>
             <div class="user-login">
               <div class="user-icon">
-                <span class="material-icons">person</span>
+                <button mat-button [matMenuTriggerFor]="menu">
+                  <span class="material-icons">person</span>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>LogOut</button>
+                </mat-menu>
               </div>
               <div class="user-active-fullname">
                 {{userInfo.nom}}, {{userInfo.prenom}}

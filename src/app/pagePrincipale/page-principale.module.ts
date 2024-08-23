@@ -6,7 +6,9 @@ import { FormulaireModule } from '../formulaire/formulaire.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './../app-routing.module';
-
+import { TicketModule } from '../ticket/ticket.module';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [
     PagePrincipaleComponent,
@@ -18,6 +20,9 @@ import { AppRoutingModule } from './../app-routing.module';
     CommonModule,
     FormulaireModule,
     AppRoutingModule,
+    TicketModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   exports: [PagePrincipaleComponent]
 })

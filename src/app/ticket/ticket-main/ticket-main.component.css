@@ -1,0 +1,17 @@
+.nouveau-ticket-box , .list-ticket-box {
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.nouveau-ticket-box {
+  height: 100%;
+  width: 100%;
+}
+
+.list-ticket-box {
+  height: 100%;
+  width: 100%;
+}
