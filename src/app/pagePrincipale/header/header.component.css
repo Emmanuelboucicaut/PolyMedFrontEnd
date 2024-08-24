@@ -1,9 +1,15 @@
 header {
     background-color: #008000; /* Vert */
     color: white;
-    padding: 10px 20px;
+    /* padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; */
+    position: fixed;
+    width: 100%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }
 
 .logo img {
@@ -33,11 +39,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header {
+/* header {
     background-color: #ffffff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(2, 20, 7, 0.1);
-}
+} */
 
 .header-container {
     display: grid;
@@ -92,7 +98,7 @@ nav .nav-links a:hover {
     align-items: center;
 } */
 
-.header-buttons .login-btn,
+/* .header-buttons .login-btn,
 .header-buttons .sign-up-btn {
     background-color: transparent;
     border: 1px solid green;
@@ -101,9 +107,9 @@ nav .nav-links a:hover {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
+} */
 
-.header-buttons .sign-up-btn {
+/* .header-buttons .sign-up-btn {
     background-color: green;
     color: #fff;
     margin-left: 10px;
@@ -116,4 +122,4 @@ nav .nav-links a:hover {
 
 .header-buttons .sign-up-btn:hover {
     background-color: green;
-}
+} */

@@ -1,12 +1,12 @@
 /* Styles de la carte */
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    margin: 20px 0;
-    overflow: hidden;
-    background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: -1px 1px 20px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  margin: 30px;
+  padding: 30px;
 }
 
 /* Styles de l'en-tête de la carte */

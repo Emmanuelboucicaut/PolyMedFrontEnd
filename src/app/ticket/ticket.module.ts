@@ -8,7 +8,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
      MatTabsModule,
      MatTableModule,
      MatInputModule,
-     MatFormFieldModule
+     MatFormFieldModule,
+     MatCardModule
      
   ]
 })

@@ -1,12 +1,33 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
-  </div>
-  <div class="main-content">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
-  </div>
-  <div class="footer">Footer</div>
-</div>
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.close()">
+      <img src="" alt="logo" />
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/formulaire">
+        <mat-icon>description</mat-icon>
+        <span>Formulaire</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/listePatient">
+        <mat-icon>people</mat-icon>
+        <span>Liste des Patients</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/ajouter">
+        <mat-icon>person_add</mat-icon>
+        <span>Ajouter un nouvel utilisateur</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/manageTicket">
+        <mat-icon>support</mat-icon>
+        <span>Ouvrir un billet</span>
+      </a>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+  </mat-sidenav>
+  <app-header [sidenav]="sidenav"></app-header>
+<router-outlet></router-outlet>
+</mat-sidenav-container>
+
+
+

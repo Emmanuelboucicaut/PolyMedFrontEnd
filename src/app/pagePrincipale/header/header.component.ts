@@ -1,9 +1,9 @@
 import { Utilisateur } from 'src/app/models/utilisateur';
 import { AppServices } from './../../utilisateur/appservices.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserSession } from 'src/app/models/user-session';
 import { UserSessionService } from 'src/app/services/user-session.service';
-
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -13,17 +13,21 @@ import { UserSessionService } from 'src/app/services/user-session.service';
 export class HeaderComponent implements OnInit {
   userInfo: UserSession = {}
 
+  @Input() sidenav!: MatSidenav;
+
   constructor(
     private userSession: UserSessionService
   ){}
 
   async ngOnInit(): Promise<void> {
     this.userInfo = await this.getUserInfo();
-
-    console.log('header',this.userInfo);
   }
 
   async getUserInfo() : Promise<UserSession>{
     return await this.userSession.getUserSession();
+  }
+
+  toggleSidebar() {
+    this.sidenav.toggle();
   }
 }

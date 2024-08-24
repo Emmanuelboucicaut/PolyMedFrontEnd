@@ -8,7 +8,13 @@ import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './../app-routing.module';
 import { TicketModule } from '../ticket/ticket.module';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 @NgModule({
   declarations: [
     PagePrincipaleComponent,
@@ -22,7 +28,14 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     TicketModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
+
+    
+
   ],
   exports: [PagePrincipaleComponent]
 })
