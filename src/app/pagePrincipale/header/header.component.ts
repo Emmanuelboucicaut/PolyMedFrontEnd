@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UserSession } from 'src/app/models/user-session';
 import { UserSessionService } from 'src/app/services/user-session.service';
 import { MatSidenav } from '@angular/material/sidenav';
-
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -16,7 +16,8 @@ export class HeaderComponent implements OnInit {
   @Input() sidenav!: MatSidenav;
 
   constructor(
-    private userSession: UserSessionService
+    private userSession: UserSessionService,
+    private authService: AuthService
   ){}
 
   async ngOnInit(): Promise<void> {
@@ -29,5 +30,10 @@ export class HeaderComponent implements OnInit {
 
   toggleSidebar() {
     this.sidenav.toggle();
+  }
+
+  async onLogout() : Promise<void> {
+    this.authService.logout();
+    window.location.reload();
   }
 }

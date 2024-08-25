@@ -1,19 +1,19 @@
-<div class="card">
-  <div class="card-header">
-    Créer/Modifier un Billet
-  </div>
-  <div class="card-content">
+<mat-card class="nouveau-ticket">
+  <mat-card-header>
+     <mat-card-title>Créer un nouveau Billet</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
     <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="title">Titre:</label>
         <input id="title" formControlName="title" type="text" />
       </div>
-
+    
       <div class="form-group">
         <label for="description">Description:</label>
         <textarea id="description" formControlName="description"></textarea>
       </div>
-
+    
       <div class="form-group">
         <label for="type">Type:</label>
         <select id="type" formControlName="type">
@@ -22,7 +22,7 @@
           <option value="ajout">Ajout</option>
         </select>
       </div>
-
+    
       <div class="form-group">
         <label for="priority">Priorité:</label>
         <select id="priority" formControlName="priority">
@@ -31,7 +31,7 @@
           <option value="élevée">Élevée</option>
         </select>
       </div>
-
+    
       <div class="form-group">
         <label for="status">Statut:</label>
         <select id="status" formControlName="status">
@@ -40,7 +40,7 @@
           <option value="terminé">Terminé</option>
         </select>
       </div>
-
+    
       <div class="form-group">
         <label for="assignee">Attribuer à:</label>
         <select id="assignee" formControlName="assignee">
@@ -49,8 +49,17 @@
           </option>
         </select>
       </div>
-
+    
       <button type="submit" class="btn btn-primary">Enregistrer</button>
     </form>
+  </mat-card-content>
+</mat-card>
+
+
+<!-- <div class="card">
+  <div class="card-header">
+    Créer/Modifier un Billet
   </div>
-</div>
+  <div class="card-content">
+  </div>
+</div> -->

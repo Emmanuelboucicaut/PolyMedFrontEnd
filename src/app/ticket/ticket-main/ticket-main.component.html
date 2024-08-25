@@ -1,19 +1,29 @@
 <mat-card class="ticket-card" appearance="outlined">
   <mat-card-header>
-    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-title>Gestion des Billets</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <mat-tab-group dynamicHeight>
-  <mat-tab label="Creer un nouveau billet">
+  <mat-tab-group>
+    <mat-tab label="Nouveau Ticket"> 
       <app-ticket />
-  </mat-tab>
-  <mat-tab label="Liste des billets crées">
+    </mat-tab>
+    <mat-tab label="Liste les tickets"> 
       <app-ticket-list />
-  </mat-tab>
-</mat-tab-group>
+    </mat-tab>
+  </mat-tab-group>
   </mat-card-content>
 </mat-card>
 
+<!-- <mat-card-content>
+  <mat-tab-group dynamicHeight>
+    <mat-tab label="Creer un nouveau billet">
+    <app-ticket />
+  </mat-tab>
+    <mat-tab label="Liste des billets crées">
+    <app-ticket-list />
+</mat-tab>
+</mat-tab-group>
+</mat-card-content> -->
 
 <!-- <mat-tab-group dynamicHeight animationDuration="2000ms">
   <mat-tab label="Entrer nouveau ticket">

@@ -64,3 +64,9 @@
 .demo-inline-calendar-card {
   width: 300px;
 }
+
+.img-menu {
+  width: 30px;
+  height: auto;
+  max-height: 20px;
+}

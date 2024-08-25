@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-.ticket-card {
+/* .ticket-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: -1px 1px 20px 20px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
   color: green;
   width: 70%;
 
-}
+} */
 
 
 .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {

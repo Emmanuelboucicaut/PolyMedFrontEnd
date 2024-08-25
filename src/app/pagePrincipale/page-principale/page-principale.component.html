@@ -1,7 +1,9 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav>
     <mat-nav-list (click)="sidenav.close()">
-      <img src="" alt="logo" />
+      <!-- <div class="img-menu">
+        <img src="./../../../assets/img/logo.png" alt="logo"/>
+      </div> -->
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/formulaire">
         <mat-icon>description</mat-icon>
@@ -12,11 +14,11 @@
         <mat-icon>people</mat-icon>
         <span>Liste des Patients</span>
       </a>
-      <mat-divider></mat-divider>
+      <!-- <mat-divider></mat-divider>
       <a mat-list-item routerLink="/ajouter">
         <mat-icon>person_add</mat-icon>
         <span>Ajouter un nouvel utilisateur</span>
-      </a>
+      </a> -->
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/manageTicket">
         <mat-icon>support</mat-icon>
