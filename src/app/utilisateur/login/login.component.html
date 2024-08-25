@@ -1,7 +1,10 @@
  <div class="login-container">
         <div class="login-box">
             <h2>{{ getLabel('TITLE_LOGIN_PAGE') }}</h2>
-            <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" style="padding-top: 0px;">
+                <div class="logo-login-page">
+                  <img alt="logo" src="./assets/img/logo.png" width="100px" height="100px" class="logo-image"/>
+                </div>
                 <div class="input-group">
                     <label for="email">{{ getLabel('LABEL_EMAIL_LOGIN_PAGE') }}</label>
                     <input type="email" id="email" [placeholder]= "getLabel('PLACEHOLDER_EMAIL_LOGIN_PAGE')"  formControlName="email" required>

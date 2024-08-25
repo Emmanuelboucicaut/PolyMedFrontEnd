@@ -37,43 +37,16 @@ body {
   padding: 0;
 }
 
-/* header.header {
-  background-color: var(--color-primary);
-  color: var(--color-primary-text);
-  padding: calc(var(--spacing-unit) * 2);
-  text-align: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-} */
-
-/* .sidebar {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
-  border-right: 1px solid var(--color-primary-dark);
-  padding: calc(var(--spacing-unit) * 2);
-  position: fixed;
-  top: 4rem;
-  bottom: 0;
-  width: 200px;
-  overflow-y: auto;
-} */
-
-/* .main-content {
-  margin-top: 4rem;
-  margin-left: 200px;
-  padding: calc(var(--spacing-unit) * 2);
-  flex-grow: 1;
-} */
 
 /* Styles de base pour les formulaires */
 form {
   background: var(--color-surface);
-  padding: calc(var(--spacing-unit) * 6);
+  padding: calc(var(--spacing-unit) * 7);
   border-radius: var(--border-radius);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: var(--spacing-unit);
+
+  
 }
 
 label {

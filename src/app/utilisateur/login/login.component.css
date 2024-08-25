@@ -7,11 +7,14 @@
     background-size: cover;
     background-position: center;
     position: relative;
+    /* padding-top: 10%; */
 }
 
 .login-box {
     background-color: rgba(255, 255, 255, 0.9);
+    /* padding: 20px; */
     border-radius: 10px;
+    /* width: 300px; */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
@@ -100,4 +103,14 @@ h2 {
   color: red;
   font-size: 16px;
 
+}
+
+.logo-image {
+    border-radius: 50%; /* Pour un cercle parfait */
+    margin-bottom: 25px;
+    /* Vous pouvez ajuster la valeur pour d'autres formes, comme border-radius: 10px; */
+}
+
+login-form {
+  padding-top: 0px !important;
 }

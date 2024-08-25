@@ -70,3 +70,20 @@
   height: auto;
   max-height: 20px;
 }
+
+/* .formulaire-link {
+  display: flex;
+} */
+
+.icon-space {
+  margin-right: 8px; /* Espace de 8px entre l'icône et le texte */
+}
+
+.span-text {
+  font-weight: bold;
+  color: green;
+  /* margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0px; */
+  margin-bottom: 150px;
+}
