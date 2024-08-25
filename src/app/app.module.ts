@@ -17,6 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsMod
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
 import { JwtService } from './services/auth/jwt.service';
 import { PagePrincipaleModule } from './pagePrincipale/page-principale.module';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input'
+import { MatFormFieldModule } from '@angular/material/form-field'
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -35,6 +38,9 @@ export function tokenGetter() {
     FormulaireModule,
     HttpClientModule,
     PagePrincipaleModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,
