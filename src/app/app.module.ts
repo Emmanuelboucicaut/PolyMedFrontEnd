@@ -20,6 +20,10 @@ import { PagePrincipaleModule } from './pagePrincipale/page-principale.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -41,6 +45,9 @@ export function tokenGetter() {
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,

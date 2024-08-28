@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, signal } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,9 +10,28 @@ import * as bcrypt from 'bcryptjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  LoginForm: FormGroup = new FormGroup({});
+export class LoginComponent {
+  //LoginForm: FormGroup = new FormGroup({});
   LabelErrorMessage : string = "";
+
+  LoginForm = this.fb.group({
+    email: ['',[
+      Validators.required,
+      Validators.email,
+      Validators.minLength(5),
+      Validators.maxLength(30)
+    ]],
+    password: ['', [
+      Validators.required,
+      Validators.minLength(6)
+    ]]
+  });
+
+  hide = signal(true);
+  clickEvent(event: MouseEvent) {
+    this.hide.set(!this.hide());
+    event.stopPropagation();
+  }
 
   constructor(
     private router: Router,
@@ -20,28 +39,23 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     @Inject(AppServices) private appServices: AppServices) {
 
-   }
+    }
 
-  ngOnInit(): void {
-    this.LoginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    })
-  }
+    // ngOnInit(): void {
+    // }
 
-  async onSubmit() {
+  async onSubmit(): Promise<any> {
     try{
-
       if (this.LoginForm.valid) {
         const { email, password } = this.LoginForm.value;
-        const response = await this.authService.LoginUser(email, password);
+        const response = await this.authService.LoginUser(email || '', password || '');
 
         if (response.statusCode === 400) {
           this.LabelErrorMessage = response.message
         }
         else {
           this.LabelErrorMessage = "";
-          
+
           await this.router.navigate(['/']).then(() => {
             window.location.reload();
             this.LoginForm.reset();
@@ -62,8 +76,11 @@ export class LoginComponent implements OnInit {
     return this.appServices.getLabel(keyResource);
   }
 
-  // getCryptedPassword(password : string ) : string {
-  //   const salt = bcrypt.genSaltSync(10);
-  //   return bcrypt.hashSync(password, salt);
-  // }
+  get emailGetter() {
+    return this.LoginForm.get('email');
+  }
+
+  get password() {
+    return this.LoginForm.get('password');
+  }
 }

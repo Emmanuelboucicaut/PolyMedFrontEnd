@@ -1,14 +1,110 @@
-.login-container {
-    display: flex;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light grey background */
+}
+/* .login-card {
+  width: 400px;
+  padding: 10px;
+} */
+
+.mat-card-login {
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 320px;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    /* padding-top: 10%; */
+    background-color: green;
 }
+
+mat-card-login:focus {
+    outline: none;
+}
+
+input {
+  max-width: 100%;
+  padding: 0px;
+  /* border: 0px solid #ccc; */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.mat-mdc-form-field {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  /* background-color: green; */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #006400;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:disabled:hover {
+  background-color: #ccc;
+}
+
+button:disabled:active {
+  background-color: #ccc;
+}
+
+button:active {
+}
+
+section {
+  display: table;
+}
+
+/* .example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+} */
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
 
 .login-box {
     background-color: rgba(255, 255, 255, 0.9);
@@ -113,4 +209,18 @@ h2 {
 
 login-form {
   padding-top: 0px !important;
+}
+
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
 }

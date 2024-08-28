@@ -1,4 +1,46 @@
- <div class="login-container">
+  <div class="container">
+    <mat-card class="mat-card-login">
+      <mat-card-header>
+        <mat-card-title>{{ getLabel('TITLE_LOGIN_PAGE')}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div [formGroup]="LoginForm">
+            <div class="logo-login-page">
+                <img alt="logo" src="./assets/img/logo.png" width="100px" height="100px" class="logo-image"/>
+            </div>
+            <mat-form-field appearance="outline">
+              <mat-label>{{getLabel('PLACEHOLDER_EMAIL_LOGIN_PAGE')}}</mat-label>
+              <input matInput formControlName="email" required type="text">
+              <mat-error *ngIf="emailGetter?.errors?.['minLength']">
+                {{ getLabel('MESSAGE_EMAIL_LOGIN_REQUIS') }}
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+              <mat-label>{{getLabel('LABEL_PASSWORD_LOGIN_PAGE')}}</mat-label>
+              <input matInput [type]="hide() ? 'password' : 'text'" formControlName="password" required/>
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()">
+                <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <p><mat-checkbox formControlName="remember">{{ getLabel('TEXT_LOGIN_PAGE_REMEMBERME') }}</mat-checkbox></p>
+            <a href="#" class="forgot-password"> {{ getLabel('TEXT_LOGIN_PAGE_FORGET_PASSWORD') }}</a>
+            <mat-divider></mat-divider>
+              <div class="login-button">
+                <button [disabled]="!LoginForm.valid" type="submit" (click)="onSubmit()" mat-raised-button color="accent">{{ getLabel('TEXT_LOGIN_PAGE_BUTTON_LOGIN') }}</button>
+              </div>
+              <div class="error-message">{{LabelErrorMessage}}</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+ <!-- <div class="login-container">
         <div class="login-box">
             <h2>{{ getLabel('TITLE_LOGIN_PAGE') }}</h2>
             <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()" style="padding-top: 0px;">
@@ -29,4 +71,4 @@
             </form>
             <div class="error-message">{{LabelErrorMessage}}</div>
         </div>
-    </div>
+    </div> -->
