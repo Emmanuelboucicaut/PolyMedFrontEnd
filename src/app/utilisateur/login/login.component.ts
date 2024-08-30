@@ -15,16 +15,19 @@ export class LoginComponent {
   LabelErrorMessage : string = "";
 
   LoginForm = this.fb.group({
-    email: ['',[
+    email: ['emmanuelboucicaut@gmail.com',[
       Validators.required,
       Validators.email,
       Validators.minLength(5),
       Validators.maxLength(30)
     ]],
-    password: ['', [
+    password: ['hA7ht@NwG8EZQfn', [
       Validators.required,
       Validators.minLength(6)
-    ]]
+    ]],
+    remember: ['',[
+
+    ]],
   });
 
   hide = signal(true);
