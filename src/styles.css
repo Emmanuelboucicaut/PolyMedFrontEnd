@@ -1,4 +1,6 @@
 /* styles.css */
+@import "@angular/material/prebuilt-themes/purple-green.css";
+
 :root {
   /* Couleurs principales */
   --color-primary: #4CAF50; /* Vert */
@@ -46,7 +48,7 @@ form {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   margin-bottom: var(--spacing-unit);
 
-  
+
 }
 
 label {
